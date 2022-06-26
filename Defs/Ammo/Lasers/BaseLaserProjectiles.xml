@@ -25,12 +25,7 @@
     </projectile>
     <modExtensions>
       <li Class="ProjectileImpactFX.EffectProjectileExtension">
-        <explosionMote>true</explosionMote>
-        <explosionMoteSize>0.25</explosionMoteSize>
-        <ImpactMoteDef>Mote_YellowSparkFlash</ImpactMoteDef>
-        <ImpactMoteSize>1</ImpactMoteSize>
-        <ImpactGlowMoteDef>Mote_ExplosionFlash</ImpactGlowMoteDef>
-        <ImpactGlowMoteSize>2.5</ImpactGlowMoteSize>
+        <explosionEffecter>Deflect_General</explosionEffecter>
       </li>
     </modExtensions>          
   </ThingDef>
