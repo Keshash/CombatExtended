@@ -108,12 +108,12 @@ namespace ProjectileImpactFX
             }
         }
 
-        void TriggerEffect(EffecterDef effect, Vector3 position, Map map, Thing hitThing = null)
+        public static void TriggerEffect(EffecterDef effect, Vector3 position, Map map, Thing hitThing = null)
         {
             TriggerEffect(effect, IntVec3.FromVector3(position), map);
         }
 
-        void TriggerEffect(EffecterDef effect, IntVec3 dest, Map map)
+        static void TriggerEffect(EffecterDef effect, IntVec3 dest, Map map)
         {
             if (effect == null) return;
 
