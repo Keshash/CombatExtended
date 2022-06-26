@@ -1051,12 +1051,11 @@ namespace CombatExtended
         {
             if (def.HasModExtension<EffectProjectileExtension>())
             {
-                def.GetModExtension<EffectProjectileExtension>()?.ThrowMote(ExactPosition,
-                                                                            Map,
-                                                                            def.projectile.damageDef.explosionCellMote,
-                                                                            def.projectile.damageDef.explosionColorCenter,
-                                                                            def.projectile.damageDef.soundExplosion,
-                                                                            hitThing);
+                var projectileEffects = def.GetModExtension<EffectProjectileExtension>();
+                if (projectileEffects != null)
+                {
+                    EffectProjectileExtension.TriggerEffect(projectileEffects.explosionEffecter, ExactPosition, Map);
+                }
             }
             var ignoredThings = new List<Thing>();
 
