@@ -89,12 +89,7 @@
 								<seam>2</seam>
 								<modExtensions>
 									<li Class="ProjectileImpactFX.EffectProjectileExtension">
-										<explosionMote>true</explosionMote>
-										<explosionMoteSize>1</explosionMoteSize>
-										<ImpactMoteDef>Mote_SparkFlash</ImpactMoteDef>
-										<ImpactMoteSize>1</ImpactMoteSize>
-										<ImpactGlowMoteDef>Mote_ExplosionFlash</ImpactGlowMoteDef>
-										<ImpactGlowMoteSize>2.5</ImpactGlowMoteSize>
+										<explosionEffecter>Deflect_General</explosionEffecter>
 									</li>
 								</modExtensions>
 							</ThingDef>
