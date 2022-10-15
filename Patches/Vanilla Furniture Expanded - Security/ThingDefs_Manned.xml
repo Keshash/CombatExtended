@@ -89,6 +89,7 @@
 		    <SwayFactor>0.82</SwayFactor>
 		  </statBases>
 		  <Properties>
+		    <recoilAmount>0.96</recoilAmount>
 		    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
 		    <hasStandardCommand>True</hasStandardCommand>
 		    <defaultProjectile>Bullet_8x35mmCharged</defaultProjectile>
@@ -126,9 +127,9 @@
 		    <SightsEfficiency>1</SightsEfficiency>
 		    <ShotSpread>0.04</ShotSpread>
 		    <SwayFactor>1.16</SwayFactor>
-		    <Bulk>15.54</Bulk>
 		  </statBases>
 		  <Properties>
+		    <recoilAmount>0.81</recoilAmount>
 		    <verbClass>CombatExtended.Verb_ShootCE</verbClass>
 		    <hasStandardCommand>True</hasStandardCommand>
 		    <defaultProjectile>Bullet_762x51mmNATO_FMJ</defaultProjectile>
@@ -247,10 +248,21 @@
 		<!-- ========== Artillery - Base ========== -->
 
 		<li Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[defName="VFES_Turret_Artillery"]/statBases</xpath>
+			<value>
+				<Mass>5500</Mass>
+			</value>
+		</li>
+
+		<li Class="PatchOperationAdd">
 			<xpath>/Defs/ThingDef[defName="VFES_Turret_Artillery"]/building</xpath>
 			<value>
 				<spawnedConceptLearnOpportunity>CE_MortarDirectFire</spawnedConceptLearnOpportunity>
 			</value>
+		</li>
+
+		<li Class="PatchOperationRemove">
+			<xpath>/Defs/ThingDef[defName="VFES_Turret_Artillery"]/building/buildingTags</xpath>
 		</li>
 
 		<li Class="PatchOperationReplace">
@@ -319,10 +331,12 @@
 			</value>
 		</li>
 	
-		<li Class="PatchOperationAdd">
+		<li Class="PatchOperationReplace">
 		  <xpath>/Defs/ThingDef[defName = "VFES_Artillery_Weapon"]/weaponTags</xpath>
 		  <value>
-		    <li>TurretGun</li>
+		    <weaponTags>
+		      <li>Artillery_BaseDestroyer</li>
+		    </weaponTags>
 		  </value>
 		</li>
 

@@ -8,15 +8,38 @@
 
     <match Class="PatchOperationSequence">
       <operations>
-	  
+
+	<li Class="PatchOperationConditional">
+		<xpath>/Defs/ThingDef[@Name="VFE_AdvancedMechanoid"]/comps</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>/Defs/ThingDef[@Name="VFE_AdvancedMechanoid"]</xpath>
+			<value>
+				<comps />
+			</value>
+		</nomatch>
+	</li>
+
+	<li Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[@Name="VFE_AdvancedMechanoid"]/comps</xpath>
+		<value>
+			<li>
+				<compClass>CombatExtended.CompPawnGizmo</compClass>
+			</li>
+			<li>
+				<compClass>CombatExtended.CompAmmoGiver</compClass>
+			</li>
+		</value>
+	</li>
+
+
 	  <!-- Advanced mechs retain their original heat armor to represent proper sealing of sensitive electronics. Minor improvement to EMP resistance as well-->
 	  
-	  <li Class="PatchOperationAdd">
-      <xpath>/Defs/ThingDef[@Name="VFE_AdvancedMechanoid"]/statBases</xpath>
+	<li Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[@Name="VFE_AdvancedMechanoid"]/statBases</xpath>
       <value>
         <ArmorRating_Electric>0.10</ArmorRating_Electric>
       </value>
-      </li>
+    </li>
 
     <!-- ========== VFE Advanced Centipede ========== -->
 
@@ -141,9 +164,9 @@
               <li>Cut</li>
             </capacities>
             <power>43</power>
-            <cooldownTime>1.65</cooldownTime>
+            <cooldownTime>2.07</cooldownTime>
             <linkedBodyPartsGroup>LeftBlade</linkedBodyPartsGroup>
-            <armorPenetrationSharp>2.07</armorPenetrationSharp>
+            <armorPenetrationSharp>2.16</armorPenetrationSharp>
             <armorPenetrationBlunt>5.4</armorPenetrationBlunt>
             <alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
           </li>
@@ -269,6 +292,10 @@
 			<AimingDelayFactor>1.25</AimingDelayFactor>
 			<MaxHitPoints>200</MaxHitPoints>
 		</value>
+	</li>
+
+	<li Class="PatchOperationRemove">
+		<xpath>/Defs/ThingDef[defName="VFE_Mech_AdvancedPikeman"]/race/baseHealthScale</xpath>
 	</li>
 
 	<li Class="PatchOperationReplace">
